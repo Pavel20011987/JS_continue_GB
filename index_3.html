@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<p class="super_element">Привет</p>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
@@ -60,7 +60,7 @@ if (event.target.tagName.toLowerCase() !== 'button') return;
 
 var button = event.target;
 
-var className = button.className;
+var className = button.classList.contains('super_element');
 var tagName = button.tagName.toLowerCase();
 
 if (button.classList.contains('super_element')) {
