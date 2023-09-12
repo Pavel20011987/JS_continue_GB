@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="data.js"></script>
+</head>
+<body>
+    <div>
+        <img id="weatherIcon" src="" alt="Weather Icon">
+        <h1 id="cityName"></h1>
+        <p id="weatherDescription"></p>
+      </div>
+    <script>
+        // Пример обновления контента на странице с использованием полученных данных о погоде
+const weatherIconElement = document.getElementById('weatherIcon');
+const cityNameElement = document.getElementById('cityName');
+const weatherDescriptionElement = document.getElementById('weatherDescription');
+
+fetch(weatherAPIUrl)
+  .then(response => response.json())
+  .then(data => {
+    // Обработка полученных данных и обновление контента на странице
+    weatherIconElement.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+    cityNameElement.textContent = data.name;
+    weatherDescriptionElement.textContent = data.weather[0].description;
+  })
+  .catch(error => {
+    // Обработка ошибок
+    console.error('Ошибка:', error);
+  });
+    </script>
+</body>
+</html>
