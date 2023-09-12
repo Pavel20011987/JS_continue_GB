@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    form-control:invalid {
+    
+            background: #fdd; /* Красный цвет фона */
+    
+           }
+     
+           </style>
+</head>
+<body>
+    <input id="from"  type="text" required>
+В инпуте написано: <span></span>
+
+<br>
+
+<button class="messageBtn" required>Показать блок</button>
+<div class="message">
+  Привет :)
+</div>
+
+<br>
+
+<form>
+  <label>
+    Первый инпут:
+    <input class="form-control" type="text" required>
+  </label>
+  <br>
+  <br>
+  <label>
+    Второй инпут:
+    <select class="form-control" required>
+      <option value=""></option>
+      <option value="1">Один</option>
+      <option value="2">Два</option>
+    </select>
+  </label>
+  <br>
+  <br>
+  <button>Отправить</button>
+</form>
+
+<script>
+  "use strict";
+
+  // Задача 1: Обновление значения span при изменении input
+  const fromInput = document.getElementById("from");
+  const spanElement = document.querySelector("span");
+
+  fromInput.addEventListener("input", function(event) {
+    const value = event.target.value;
+    spanElement.textContent = value;
+  });
+
+  // Задача 2: Показ блока при клике на кнопку
+  const messageBtn = document.querySelector(".messageBtn");
+  const messageDiv = document.querySelector(".message");
+
+  messageBtn.addEventListener("click", function() {
+    messageDiv.classList.add("animate_animated", "animate_fadeInLeftBig");
+    messageDiv.style.visibility = "visible";
+  });
+
+  // Задача 3: Проверка полей формы и подсветка незаполненных полей
+  const form = document.querySelector("form");
+  const formInputs = form.querySelectorAll("input, select");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Отменить отправку формы по умолчанию
+
+    let hasEmptyField = false;
+
+    formInputs.forEach(function(input) {
+      if (input.value.trim() === "") {
+        input.classList.add("error");
+        hasEmptyField = true;
+      } else {
+        input.classList.remove("error");
+      }
+    });
+
+    if (!hasEmptyField) {
+     // form.submit(); // Отправить форму, если нет незаполненных полей
+    }
+  });
+
+  formInputs.forEach(function(input) {
+    input.addEventListener("input", function() {
+      if (input.value.trim() === "") {
+        input.classList.add("error");
+      } else {
+        input.classList.remove("error");
+      }
+    });
+  });
+</script>
+</body>
+</html>
