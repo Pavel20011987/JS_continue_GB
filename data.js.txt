@@ -1,0 +1,12 @@
+const weatherAPIUrl = 'https://api.openweathermap.org/data/2.5/weather?q={Minsk}&appid={577d11c83da247995d6a0d0ceb7b92ae}';
+
+fetch(weatherAPIUrl)
+  .then(response => response.json())
+  .then(data => {
+    // Обработка полученных данных
+    console.log(data);
+  })
+  .catch(error => {
+    // Обработка ошибок
+    console.error('Ошибка:', error);
+  });
