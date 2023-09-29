@@ -1,0 +1,417 @@
+@import "../styles/default.scss";
+@import "../styles/center.scss";
+
+@import "../styles/header.scss";
+
+@import "../styles/breadcrumb.scss";
+
+.image-side {
+    height: 777px;
+    // я тут решил что высота блока должна быть фиксированной, а кртинка в некго вписана.
+    background-color: #F7F7F7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // position: relative;
+
+    .slider-zone {
+        width: 47px;
+        height: 47px;
+        background-color: #2A2A2A26;
+        flex-basis: auto;
+
+        .slider-ico {
+            margin: 8px;
+            fill: black;
+
+            &:hover {
+                fill: #F16D7F;
+            }
+        }
+    }
+
+    .img-conteiner {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        margin-top: 11px;
+        margin-bottom: 42px;
+
+    }
+}
+
+.product-description {
+    .product-center {
+        margin-top: -65px;
+        // наложение на картинку
+        display: flex;
+        border: 1px solid #EAEAEA;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 64.5px;
+        padding-bottom: 64.5px;
+
+        background-color: white;
+
+        line-height: normal;
+        font-style: normal;
+        font-weight: 300;
+
+        // margin-top: -65px;
+        // position: absolute;
+        // z-index: 9999;
+        // не удалось наложить блок на картинку. Absolute позиция с z indexom вроде как решает задачу, но проблемы с позиционированием блока в целом и его размерами.
+
+        .colextion-name {
+            color: #F16D7F;
+            font-size: 14px;
+            margin-bottom: 12.1px;
+        }
+
+        .devider-1 {
+            background-color: #EF5B70;
+            height: 3.03px;
+            width: 63px;
+            margin-bottom: 12.1px;
+        }
+
+        .product-name {
+            color: #4D4D4D;
+            font-size: 18px;
+            margin-bottom: 48.1px;
+        }
+
+        .description-content {
+            color: #5E5E5E;
+            text-align: center;
+            font-size: 14px;
+            max-width: 555px;
+            padding-bottom: 32.27px;
+        }
+
+        .price {
+            color: #EF5B70;
+            font-size: 24px;
+            margin-bottom: 65.4px;
+        }
+
+        .devider-2 {
+            background-color: #EAEAEA;
+            height: 1px;
+            width: 641px;
+            margin-bottom: 65.05px;
+        }
+
+        .dropdowns {
+            color: #6F6E6E;
+            font-size: 14px;
+            font-weight: 400;
+            display: flex;
+            gap: 22.98px;
+            margin-bottom: 48.41px;
+        }
+
+        .filter {
+
+            & summary::-webkit-details-marker {
+                display: none;
+            }
+
+            // почемуто данный стиль не скрывает стандартные значки
+
+            & summary {
+                list-style: none;
+                display: list-item;
+                line-height: 10px;
+            }
+
+            & summary::after {
+                content: "";
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                margin-left: 9px;
+                vertical-align: middle;
+                background-image: url("../img/filter.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+
+        .add-button {
+            width: 212px;
+            height: 48.4px;
+            border: 1px solid #FF6A6A;
+            display: flex;
+            align-items: center;
+
+            &_ico {
+                width: 26px;
+                height: 24.2px;
+                margin-left: 24px;
+                margin-right: 23px;
+                fill: #FF6A6A;
+            }
+
+            &_text {
+                color: #F26376;
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+
+    }
+
+}
+
+.products {
+    margin-top: 129px;
+    margin-bottom: 128px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+    &_cards-grid {
+        max-width: 100%;
+        position: relative;
+        margin-top: 48px;
+        margin-bottom: 48px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 360px);
+        gap: 30px;
+
+        &_card {
+            position: relative;
+
+            .product_cards_bg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #F8F8F8;
+                z-index: -1;
+            }
+
+            .card_img_container {
+                position: relative;
+
+                .card_img {
+                    max-height: 420px;
+                    max-width: 100%;
+                }
+
+                .card_hover {
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: #3A3838DB;
+                    align-items: center;
+                    justify-content: center;
+
+                    &_add_to_cart {
+                        display: flex;
+                        width: 139px;
+                        height: 44px;
+                        color: #fff;
+                        border: 1px solid #fff;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 11.04px;
+
+                        .card_add_ico {
+                            width: 26px;
+                            height: 24px;
+                        }
+
+                        .card_add_text {
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                        }
+                    }
+                }
+
+                &:hover .card_hover {
+                    display: flex;
+                }
+            }
+
+            .card_content {
+                padding-top: 24.35px;
+                padding-right: 28.8px;
+                padding-bottom: 20px;
+                padding-left: 16.46px;
+                /* тут правильней наверное margin но тогда проблемы с фоном который я так и не смог подложить под картинку */
+
+                /* background: #F8F8F8; */
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                .card_title {
+                    font-weight: 400;
+                    font-size: 13px;
+                    line-height: 16px;
+                    color: #000000;
+                }
+
+                .card_text {
+                    font-weight: 300;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #5D5D5D;
+                }
+
+                .card_price {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #F16D7F;
+                }
+            }
+        }
+    }
+}
+
+@import "../styles/subscribe.scss";
+
+.subscribe {
+    background-image: url("../img/subscibe_bg.png");
+}
+
+@import "../styles/footter.scss";
+
+// .products_cards-grid {
+//     display: flex;
+//     flex-wrap: nowrap;
+//     overflow-x: auto;
+//     margin: 0 -15px;
+
+//     &_card {
+//         width: 360px;
+//         margin: 0 15px;
+//     }
+// }
+// Интересный вариант если допустимо изменение размера карточек
+
+@media (max-width: 1024px) {
+    .image-side {
+        height: 624px;
+        padding-top: 30px;
+        padding-bottom: 29px;
+
+        .img-conteiner {
+            height: 100%;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .product-description {
+        .product-center {
+            margin-top: 0;
+        }
+    }
+
+    .products_cards-grid>*:nth-child(n+3) {
+        display: none;
+    }
+
+    // обращаемся ко всем дочерним элементам с номером 3 и больше
+}
+
+@media (max-width: 767px) {
+    .image-side {
+        padding: 0;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        // height: 600px;
+        position: relative;
+
+        z-index: 1;
+
+        .slider-zone {}
+
+        .img-conteiner {
+            // flex: 1;
+            // /* Занимает оставшееся свободное пространство */
+            // // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // margin-top: 85px;
+            // margin-bottom: 85px;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-height: 454px;
+            max-width: 100%;
+            min-width: 100%;
+            z-index: -1;
+
+            img {
+                // max-height: 100%;
+                // width: auto;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                // max-width: 100%;
+            }
+        }
+
+    }
+
+    .product-description {
+        .product-center {
+            .price {
+                margin-bottom: 32px;
+            }
+
+            .devider-2 {
+                margin-bottom: 49.36px;
+                width: 90%;
+            }
+
+            .dropdowns {
+                font-size: 10px;
+                margin-bottom: 64.09px;
+            }
+
+
+        }
+
+    }
+
+    .products {
+
+
+        &_cards-grid {
+
+
+            &_card {
+
+
+                .product_cards_bg {}
+
+                .card_img_container {
+
+
+                    .card_img {}
+
+                }
+
+
+            }
+        }
+    }
+}

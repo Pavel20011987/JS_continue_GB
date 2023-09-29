@@ -1,0 +1,111 @@
+@charset "UTF-8";
+.feature {
+  background-color: #222224;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  padding-bottom: 104px;
+  padding-top: 104px;
+}
+.feature_info {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.feature_info_icon-pos {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.feature_info_icon-pos .featre_i_icon-1 {
+  width: 45px;
+  height: 31.9px;
+  margin-bottom: 28.07px;
+}
+.feature_info_icon-pos .featre_i_icon-2 {
+  width: 40px;
+  height: 39.9px;
+  margin-bottom: 19.07px;
+}
+.feature_info_icon-pos .featre_i_icon-3 {
+  width: 47px;
+  height: 34.9px;
+  margin-bottom: 25.08px;
+}
+.feature_info_title {
+  color: #FBFBFB;
+  font-size: 19.96px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 19.7px;
+  /* тут не совсем верно каждая иконка выравнена относительно друг друга на одной высоте, но сама высота должна быть задана как-то иначе, а не наименьшая */
+}
+.feature_info_text {
+  color: #FBFBFB;
+  font-size: 13.972px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-top: 16px;
+}
+
+@media (max-width: 1024px) {
+  .feature {
+    display: flex;
+    flex-direction: column;
+    padding-top: 48.16px;
+    padding-bottom: 64px;
+    margin-top: 64.52px;
+  }
+  .feature_info_icon-pos .featre_i_icon-1 {
+    margin-bottom: 28.07px;
+  }
+  .feature_info_icon-pos .featre_i_icon-2 {
+    margin-bottom: 19.07px;
+  }
+  .feature_info_icon-pos .featre_i_icon-3 {
+    margin-bottom: 25.08px;
+  }
+  .feature_info_title {
+    margin-top: 0;
+  }
+  .feature_info_text {
+    max-width: 360px;
+    margin-top: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .feature {
+    padding-top: 48px;
+    padding-bottom: 81px;
+    margin-top: 96px;
+  }
+  .feature_info_icon-pos {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+  .feature_info_icon-pos .featre_i_icon-1 {
+    width: 43.5px;
+    height: 30.9px;
+    margin-bottom: 27.12px;
+  }
+  .feature_info_icon-pos .featre_i_icon-2 {
+    width: 38.6px;
+    height: 38.6px;
+    margin-bottom: 18.42px;
+  }
+  .feature_info_icon-pos .featre_i_icon-3 {
+    width: 45.4px;
+    height: 33.7px;
+    margin-bottom: 24.22px;
+  }
+  .feature_info_text {
+    max-width: 347.82px;
+    margin-top: 14.65px;
+  }
+}

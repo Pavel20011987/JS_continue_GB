@@ -1,0 +1,199 @@
+@import "../styles/rectangle_button.scss";
+// пробую освоить mixin будет использован для задания стиля кнопке
+
+.border1 {
+    border: green solid 1px;
+}
+
+.border2 {
+    border: red solid 1px;
+}
+
+@import "../styles/center.scss";
+@import "../styles/default.scss";
+
+@import "../styles/header.scss";
+
+@import "../styles/breadcrumb.scss";
+
+.registration {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 64px;
+    padding-bottom: 96px;
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        width: 360px;
+
+        .registration__form {
+            color: #222222;
+            font-size: 16px;
+            font-family: Lato;
+            font-weight: 300;
+
+            .your-name-block {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                margin-bottom: 34.5px;
+            }
+
+            .field {
+                width: 100%;
+                height: 44px;
+                border: 0.50px #A4A4A4 solid;
+
+                &::placeholder {
+                    padding-left: 16.73px;
+                }
+            }
+
+            .gender-choice {
+                display: flex;
+                gap: 20px;
+                font-size: 11px;
+                font-family: Lato;
+                font-weight: 300;
+
+                // так как стандартная радиокнопка зависит от браузера. Менять её размер не рекомендуется. По этому пересоздаём кнопку.
+                input[type="radio"] {
+                    vertical-align: middle;
+
+                    width: 17px;
+                    height: 17px;
+                    margin-right: 10px;
+                }
+
+            }
+
+            .login-details-block {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                margin-top: 33px;
+                margin-bottom: 39px;
+
+                .tip {
+                    margin-top: -5px;
+                    color: #B1B1B1;
+                    font-size: 13px;
+                    font-family: Lato;
+                    font-weight: 300;
+                }
+            }
+
+            .button {
+                @include button-style;
+                max-width: 167px;
+
+                svg {
+                    fill: #fff;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        width: 652px;
+
+        color: black;
+        font-size: 24px;
+        font-family: Lato;
+        font-weight: 300;
+
+        &__title {
+            margin-bottom: 22px;
+        }
+
+        &__text {
+            margin-bottom: 21px;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            list-style-type: none;
+            gap: 16px;
+
+            // li {
+            //     padding-left: 20px;
+            // }
+            // li::marker {
+            //     content: url('../img/cheklist_marker.svg');
+            // }
+            // оставлю для примера проблемы. В данной реализации маркеры ставятся браузером за пределами блока.
+
+            li::before {
+                content: url('../img/cheklist_marker.svg');
+                padding-right: 20px;
+            }
+        }
+    }
+}
+
+
+@import "../styles/subscribe.scss";
+
+.subscribe {
+    background-image: url("../img/subscibe_bg.png");
+}
+
+@import "../styles/footter.scss";
+
+@media (max-width: 1024px) {
+    .registration {
+        justify-content: center;
+        gap: 22px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 40px;
+
+        &__right {
+            font-size: 16px;
+            width: 354px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .registration {
+        flex-direction: column;
+        padding-top: 40.41px;
+        padding-bottom: 100.24px;
+        gap: 40px;
+
+        &__left {
+            width: auto;
+            max-width: 360px;
+
+            .registration__form {
+                .field {
+                    height: 45px;
+                }
+
+                .login-details-block {
+                    margin-top: 33.83px;
+                }
+            }
+        }
+
+        &__right {
+            width: 100%;
+            font-size: 16px;
+
+            &__title {
+                margin-bottom: 32.36px;
+            }
+
+            &__text {
+                margin-bottom: 22.5px;
+            }
+        }
+    }
+}

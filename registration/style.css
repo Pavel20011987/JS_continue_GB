@@ -1,0 +1,607 @@
+@charset "UTF-8";
+.border1 {
+  border: green solid 1px;
+}
+
+.border2 {
+  border: red solid 1px;
+}
+
+.center {
+  padding-left: calc(50% - 570px);
+  padding-right: calc(50% - 570px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+@keyframes scale-up-ver-top {
+  0% {
+    transform: scaleY(0.4);
+    transform-origin: 100% 0;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0;
+  }
+}
+.header {
+  background: #222;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+.header_left {
+  padding-top: 18px;
+  padding-bottom: 19px;
+  width: 111px;
+  height: 38px;
+  display: flex;
+  align-items: flex-end;
+  gap: 41px;
+}
+.header_right {
+  padding-top: 28px;
+  padding-bottom: 20px;
+  width: 159px;
+  height: 29px;
+  display: flex;
+  gap: 33px;
+  align-items: center;
+}
+.header_right .menu-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 32px;
+  gap: 20px;
+  width: 232px;
+}
+.header_right .menu-content .menu_title {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.header_right .menu-content .menu_group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.header_right .menu-content .menu_group .menu_category {
+  color: #F16D7F;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.header_right .menu-content .menu_group .menu_link_group {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-left: 21.5px;
+}
+.header_right .menu-content .menu_group .menu_link_group .menu_link {
+  color: #6F6E6E;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.header_right .menu-content .menu_close_button {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 16px;
+  right: 17px;
+}
+.header_right .menu-content .menu_close_button:hover {
+  cursor: pointer;
+}
+.header_right_menu-toggle {
+  display: none;
+}
+.header_right_menu-toggle:checked ~ .menu-content {
+  display: flex;
+  /* показываем выпадающее меню при активации чекбокса */
+  flex-direction: column;
+  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.header_right_menu-button {
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 32px;
+  }
+  .header_left {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .header_right {
+    padding-top: 19px;
+    padding-bottom: 18px;
+    width: 169px;
+    height: 37px;
+    gap: 0;
+  }
+  .header_right_menu-button {
+    cursor: pointer;
+  }
+  .header_right_menu-button .menu {
+    margin-right: 25px;
+  }
+  .header_right .profile {
+    margin-right: 42px;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    padding: 0px 16px;
+    background: #222;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .header_left {
+    width: auto;
+    height: auto;
+  }
+  .header_right {
+    width: auto;
+  }
+  .header_right_menu-button .menu {
+    margin-right: 0px;
+  }
+  .header_right .profile {
+    display: none;
+  }
+  .header_right .shopping_cart {
+    display: none;
+  }
+}
+.breadcrumb {
+  background-color: #F8F3F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 148px;
+}
+.breadcrumb .page-title {
+  color: #F16D7F;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.breadcrumb_links {
+  list-style: none;
+  display: flex;
+}
+.breadcrumb_links .decorator:not(:last-child)::after {
+  content: "  /  ";
+}
+.breadcrumb_links .decorator:last-child a {
+  color: #F16D7F;
+  font-weight: bold;
+}
+.breadcrumb_links a {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: light;
+  line-height: normal;
+}
+.breadcrumb_links a:link, .breadcrumb_links a:visited {
+  color: #636363;
+}
+
+@media (max-width: 1024px) {
+  .breadcrumb {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .breadcrumb {
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+  }
+}
+.registration {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 64px;
+  padding-bottom: 96px;
+}
+.registration__left {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+}
+.registration__left .registration__form {
+  color: #222222;
+  font-size: 16px;
+  font-family: Lato;
+  font-weight: 300;
+}
+.registration__left .registration__form .your-name-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 34.5px;
+}
+.registration__left .registration__form .field {
+  width: 100%;
+  height: 44px;
+  border: 0.5px #A4A4A4 solid;
+}
+.registration__left .registration__form .field::-moz-placeholder {
+  padding-left: 16.73px;
+}
+.registration__left .registration__form .field::placeholder {
+  padding-left: 16.73px;
+}
+.registration__left .registration__form .gender-choice {
+  display: flex;
+  gap: 20px;
+  font-size: 11px;
+  font-family: Lato;
+  font-weight: 300;
+}
+.registration__left .registration__form .gender-choice input[type=radio] {
+  vertical-align: middle;
+  width: 17px;
+  height: 17px;
+  margin-right: 10px;
+}
+.registration__left .registration__form .login-details-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 33px;
+  margin-bottom: 39px;
+}
+.registration__left .registration__form .login-details-block .tip {
+  margin-top: -5px;
+  color: #B1B1B1;
+  font-size: 13px;
+  font-family: Lato;
+  font-weight: 300;
+}
+.registration__left .registration__form .button {
+  width: 100%;
+  height: 50px;
+  background-color: #F16D7F;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  border: none;
+  max-width: 167px;
+}
+.registration__left .registration__form .button:hover {
+  cursor: pointer;
+}
+.registration__left .registration__form .button svg {
+  fill: #fff;
+  margin-left: 20px;
+}
+.registration__right {
+  display: flex;
+  flex-direction: column;
+  width: 652px;
+  color: black;
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 300;
+}
+.registration__right__title {
+  margin-bottom: 22px;
+}
+.registration__right__text {
+  margin-bottom: 21px;
+}
+.registration__right__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style-type: none;
+  gap: 16px;
+}
+.registration__right__list li::before {
+  content: url("../img/cheklist_marker.svg");
+  padding-right: 20px;
+}
+
+.subscribe {
+  display: flex;
+  justify-content: space-between;
+  background-image: url("./img/subscibe_bg.png");
+  /* путь к изображению */
+  background-size: cover;
+  /* масштабируем изображение, чтобы оно занимало всю площадь блока */
+  background-position: center center;
+  /* выравниваем изображение по центру блока */
+  position: relative;
+  z-index: 1;
+  padding-top: 72.64px;
+  padding-bottom: 128px;
+}
+.subscribe_bg_filling {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(244, 244, 244, 0.7);
+  z-index: -1;
+}
+.subscribe_info {
+  /* border: 2px solid #008a8a; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+.subscribe_info .subscribe_photo_block {
+  /* border: 1px solid #00af26; */
+  display: flex;
+  position: relative;
+  width: 144.578px;
+  height: 150.361px;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 14.41px;
+  transform: translate(-10px, 13.95px);
+  /* тут савсем не правильная позиция, от того что я не смог сам блок с картинкой правильно реализовать. Но в целом еслиб блок был таким как положено, то я бы подбирал место именно так.*/
+}
+.subscribe_info .subscribe_photo_block .subscribe_photo_window {
+  border-radius: 50%;
+  /* задаем круглую форму для блока */
+  overflow: hidden;
+  /* скрываем все, что выходит за границы блока */
+  width: 96px;
+  height: 96px;
+}
+.subscribe_info .subscribe_photo_block .subscribe_photo_window .subscribe_photo {
+  display: block;
+  width: 100%;
+}
+.subscribe_info_text {
+  color: #222224;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 360px;
+  min-height: 99px;
+  text-align: center;
+}
+.subscribe_form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0;
+}
+.subscribe_form_text {
+  color: #222224;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.subscribe_form_text__title {
+  font-size: 24px;
+  font-style: bold;
+  font-weight: 700;
+  line-height: 167.2%;
+}
+.subscribe_form_text__desc {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 167.2%;
+}
+.subscribe_form_field {
+  height: 49px;
+  display: flex;
+}
+.subscribe_form_field input[type=email] {
+  background-color: #E1E1E1;
+  border: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  width: 256px;
+  text-indent: 22px;
+  color: #222224;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.subscribe_form_field button[type=submit] {
+  background-color: #F16D7F;
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  width: 100px;
+  color: #FFF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media (max-width: 1024px) {
+  .subscribe {
+    flex-direction: column;
+    padding-top: 54px;
+    padding-bottom: 219px;
+  }
+  .subscribe_info {
+    margin-bottom: 48px;
+  }
+  .subscribe_text {
+    width: auto;
+    margin-bottom: 27px;
+  }
+}
+@media (max-width: 767px) {
+  .subscribe {
+    padding-bottom: 109.92px;
+  }
+  .subscribe_info {
+    margin-bottom: 59px;
+  }
+  .subscribe_text {
+    max-width: 343px;
+    font-size: 18px;
+    min-height: auto;
+  }
+  .subscribe_form_text {
+    margin-bottom: 22.15px;
+  }
+  .subscribe_form_text h2 {
+    font-size: 14px;
+  }
+  .subscribe_field {
+    height: 46.9px;
+  }
+  .subscribe_field input[type=email] {
+    width: 245.2px;
+  }
+  .subscribe_field button[type=submit] {
+    width: 95.8px;
+  }
+}
+@media (max-width: 375px) {
+  .subscribe_info {
+    min-width: auto;
+  }
+  .subscribe_form_field input[type=email] {
+    width: auto;
+  }
+}
+.subscribe {
+  background-image: url("../img/subscibe_bg.png");
+}
+
+.footter {
+  background-color: #222224;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 23px;
+}
+.footter .coyright {
+  color: #FBFBFB;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 332px;
+  display: flex;
+  align-items: center;
+}
+.footter .social {
+  display: flex;
+  width: 148px;
+  justify-content: space-between;
+}
+.footter .social_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 31.451px;
+  height: 32px;
+  background-color: #FFFFFF;
+}
+.footter .social_button svg {
+  height: 18px;
+}
+.footter .social_button:hover {
+  background-color: #F16D7F;
+}
+.footter .social_button:hover svg path {
+  fill: #FFF;
+}
+
+@media (max-width: 1024px) {
+  .footter .coyright {
+    width: auto;
+  }
+}
+@media (max-width: 767px) {
+  .footter .coyright {
+    width: auto;
+  }
+  .footter .social {
+    display: flex;
+    width: 148px;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 1024px) {
+  .registration {
+    justify-content: center;
+    gap: 22px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 40px;
+  }
+  .registration__right {
+    font-size: 16px;
+    width: 354px;
+  }
+}
+@media (max-width: 1024px) {
+  .registration {
+    flex-direction: column;
+    padding-top: 40.41px;
+    padding-bottom: 100.24px;
+    gap: 40px;
+  }
+  .registration__left {
+    width: auto;
+    max-width: 360px;
+  }
+  .registration__left .registration__form .field {
+    height: 45px;
+  }
+  .registration__left .registration__form .login-details-block {
+    margin-top: 33.83px;
+  }
+  .registration__right {
+    width: 100%;
+    font-size: 16px;
+  }
+  .registration__right__title {
+    margin-bottom: 32.36px;
+  }
+  .registration__right__text {
+    margin-bottom: 22.5px;
+  }
+}

@@ -1,0 +1,229 @@
+// @import "./center.scss";
+
+.subscribe {
+    display: flex;
+    justify-content: space-between;
+
+    background-image: url("./img/subscibe_bg.png");
+    /* путь к изображению */
+    background-size: cover;
+    /* масштабируем изображение, чтобы оно занимало всю площадь блока */
+    background-position: center center;
+    /* выравниваем изображение по центру блока */
+    position: relative;
+    z-index: 1;
+
+    padding-top: 72.64px;
+    padding-bottom: 128px;
+
+    &_bg_filling {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(244, 244, 244, 0.70);
+        z-index: -1;
+    }
+
+    &_info {
+        /* border: 2px solid #008a8a; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: max-content;
+
+        .subscribe_photo_block {
+            /* border: 1px solid #00af26; */
+            display: flex;
+            position: relative;
+            width: 144.578px;
+            height: 150.361px;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 14.41px;
+
+            transform: translate(-10px, 13.95px);
+            /* тут савсем не правильная позиция, от того что я не смог сам блок с картинкой правильно реализовать. Но в целом еслиб блок был таким как положено, то я бы подбирал место именно так.*/
+
+            .subscribe_photo_window {
+                border-radius: 50%;
+                /* задаем круглую форму для блока */
+                overflow: hidden;
+                /* скрываем все, что выходит за границы блока */
+                width: 96px;
+                height: 96px;
+
+                .subscribe_photo {
+                    // max-width: 100%;
+                    // max-height: 100%;
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+
+        &_text {
+            color: #222224;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            max-width: 360px;
+            min-height: 99px;
+            text-align: center;
+        }
+    }
+
+    &_form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0;
+
+        &_text {
+            color: #222224;
+            text-align: center;
+
+            margin-bottom: 32px;
+
+
+            // h1 {
+            //     font-size: 24px;
+            //     font-style: bold;
+            //     font-weight: 700;
+            //     line-height: 167.2%;
+            // }
+
+            // h2 {
+            //     font-size: 18px;
+            //     font-style: normal;
+            //     font-weight: normal;
+            //     line-height: 167.2%;
+            // }
+
+            &__title {
+                font-size: 24px;
+                font-style: bold;
+                font-weight: 700;
+                line-height: 167.2%;
+            }
+
+            &__desc {
+                font-size: 18px;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 167.2%;
+            }
+        }
+
+        &_field {
+            height: 49px;
+            display: flex;
+
+            input[type="email"] {
+                background-color: #E1E1E1;
+                border: none;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                width: 256px;
+                text-indent: 22px;
+
+                color: #222224;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            button[type="submit"] {
+                background-color: #F16D7F;
+                border: none;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                cursor: pointer;
+                width: 100px;
+
+                color: #FFF;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .subscribe {
+        flex-direction: column;
+        padding-top: 54px;
+        padding-bottom: 219px;
+
+        &_info {
+            margin-bottom: 48px;
+
+        }
+
+        &_text {
+            width: auto;
+            margin-bottom: 27px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .subscribe {
+        padding-bottom: 109.92px;
+
+        &_info {
+            margin-bottom: 59px;
+        }
+
+        &_text {
+            max-width: 343px;
+            font-size: 18px;
+            min-height: auto;
+        }
+
+        &_form {
+            &_text {
+                margin-bottom: 22.15px;
+
+                h2 {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &_field {
+            height: 46.9px;
+
+            input[type="email"] {
+                width: 245.2px;
+            }
+
+            button[type="submit"] {
+                width: 95.8px;
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .subscribe {
+        &_info {
+            min-width: auto;
+        }
+
+        &_form_field {
+            input[type="email"] {
+                width: auto;
+            }
+        }
+    }
+}
