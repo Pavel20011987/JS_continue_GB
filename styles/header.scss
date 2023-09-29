@@ -1,0 +1,193 @@
+@keyframes scale-up-ver-top {
+    0% {
+        transform: scaleY(.4);
+        transform-origin: 100% 0
+    }
+
+    100% {
+        transform: scaleY(1);
+        transform-origin: 100% 0
+    }
+}
+
+
+// @import "./default.scss";
+// @import "./center.scss";
+
+.header {
+    background: #222;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+
+    &_left {
+        padding-top: 18px;
+        padding-bottom: 19px;
+        width: 111px;
+        height: 38px;
+        display: flex;
+        align-items: flex-end;
+        gap: 41px;
+    }
+
+    &_right {
+        padding-top: 28px;
+        padding-bottom: 20px;
+        width: 159px;
+        height: 29px;
+        display: flex;
+        gap: 33px;
+        align-items: center;
+
+        .menu-content {
+            display: none;
+            // скрываем выпадающее меню
+            position: absolute;
+            // задаем позиционирование элемента
+            top: 100%;
+            // задаем отступ сверху 
+            right: 0;
+            // задаем отступ слева
+            z-index: 1;
+            // задаем z-index
+            background-color: #fff;
+            // задаем цвет фона
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            // добавляем тень
+            padding: 32px;
+            // задаем внутренние отступы 
+            gap: 20px;
+            width: 232px;
+
+            .menu_title {
+                margin-bottom: 4px;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+            .menu_group {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                .menu_category {
+                    color: #F16D7F;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+
+                .menu_link_group {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 11px;
+                    margin-left: 21.5px;
+
+                    .menu_link {
+                        color: #6F6E6E;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+                }
+            }
+
+            .menu_close_button {
+                width: 12px;
+                height: 12px;
+                position: absolute;
+                top: 16px;
+                right: 17px;
+            }
+
+            .menu_close_button:hover {
+                cursor: pointer;
+            }
+        }
+
+        &_menu-toggle {
+            display: none;
+
+            &:checked~.menu-content {
+                display: flex;
+                /* показываем выпадающее меню при активации чекбокса */
+                flex-direction: column;
+                animation: scale-up-ver-top .4s cubic-bezier(.39, .575, .565, 1.000) both;
+            }
+        }
+
+        &_menu-button {
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 0 32px;
+
+        &_left {
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+
+        &_right {
+            padding-top: 19px;
+            padding-bottom: 18px;
+            width: 169px;
+            height: 37px;
+            gap: 0;
+
+            &_menu-button {
+                cursor: pointer;
+
+                .menu {
+                    margin-right: 25px;
+                }
+            }
+
+            .profile {
+                margin-right: 42px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        padding: 0px 16px;
+        background: #222;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &_left {
+            width: auto;
+            height: auto;
+        }
+
+        &_right {
+            width: auto;
+
+            &_menu-button {
+                .menu {
+                    margin-right: 0px;
+                }
+            }
+
+            .profile {
+                display: none;
+            }
+
+            .shopping_cart {
+                display: none;
+            }
+        }
+    }
+}

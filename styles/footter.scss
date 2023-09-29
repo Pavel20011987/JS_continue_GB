@@ -1,0 +1,71 @@
+// @import "./center.scss";
+
+.footter {
+    background-color: #222224;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 23px;
+
+    .coyright {
+        color: #FBFBFB;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 332px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .social {
+        display: flex;
+        width: 148px;
+
+        justify-content: space-between;
+
+        &_button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 31.451px;
+            height: 32px;
+            background-color: #FFFFFF;
+
+            svg {
+                height: 18px;
+            }
+
+            &:hover {
+                background-color: #F16D7F;
+
+                svg path {
+                    fill: #FFF;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .footter {
+        .coyright {
+            width: auto;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .footter {
+        .coyright {
+            width: auto;
+        }
+
+        .social {
+            display: flex;
+            width: 148px;
+            justify-content: space-between
+        }
+    }
+}

@@ -1,0 +1,628 @@
+@keyframes scale-up-ver-top {
+    0% {
+        transform: scaleY(.4);
+        transform-origin: 100% 0
+    }
+
+    100% {
+        transform: scaleY(1);
+        transform-origin: 100% 0
+    }
+}
+
+.border {
+    border: 1px solid #00af26;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@import "./styles/default.scss";
+
+@import "./styles/center.scss";
+
+@import "./styles/header.scss";
+
+.shopping-cart {
+
+    position: relative;
+    display: inline-block;
+
+    .cart-counter {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 19px;
+        height: 19px;
+        background-color: #F16D7F;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+    }
+}
+
+.promo {
+.promo {
+    background: #F1E4E6;
+    display: flex;
+    min-width: 0;
+
+    .promo_img {
+        /* в образце для картинки создан блок с процентной шириной */
+        max-width: 800px;
+        min-width: 0;
+        /* а для самой картинки в образце прописаны свойства
+        max-width: 100%;
+        overflow-clip-margin: content-box;
+        overflow: clip;
+        */
+    }
+
+    .promo_content {
+        /* padding-left: 63px; */
+
+        display: flex;
+        align-items: center;
+        /* в образце блок (у меня бы это был promo_info) позиционирован относительно верха при помощи 
+        margin-top: 48%;*/
+
+        .promo_info {
+            width: 405px;
+            display: flex;
+            color: #222222;
+
+            .line_info {
+                background: #F16D7F;
+                min-width: 12px;
+                max-width: 12px;
+                /* если тут оставить просто ширину 12px то она воспринимается как максимальная */
+                margin-right: 16px;
+            }
+
+            .info_content {
+                &__big {
+                    font-weight: 900;
+                    font-size: 48px;
+                    line-height: 58px;
+                }
+
+                &__small {
+                    font-weight: 700;
+                    font-size: 32px;
+                    line-height: 38px;
+                }
+            }
+
+        }
+    }
+}
+
+.other {
+    margin-top: 65px;
+    margin-bottom: 96px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    &_item {
+        position: relative;
+
+        img {
+            max-width: 100%;
+            min-height: 100%;
+            /* установка высоты возможно немного растягивает картинки, но иначе они почемуто не вписываются в блоки. Может из-за границ, но без границ этого вообще не понятно */
+        }
+    }
+
+    &_big_item {
+        grid-column: 1 / -1;
+    }
+
+    &_img_filling {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(33, 22, 22, 0.7);
+    }
+
+    &_content {
+        position: absolute;
+        min-width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        h3 {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 29px;
+            text-align: center;
+            color: #F16D7F;
+        }
+    }
+
+}
+
+.products {
+    margin-top: 96px;
+    margin-bottom: 95px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+    &_title {
+        display: flex;
+        flex-direction: column;
+        min-width: 100%;
+        gap: 6px;
+        text-align: center;
+
+        h2 {
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 36px;
+            color: #222222;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #9F9F9F;
+        }
+    }
+
+    &_cards-grid {
+        max-width: 100%;
+        position: relative;
+        margin-top: 48px;
+        margin-bottom: 48px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 360px);
+        gap: 30px;
+
+        &_card {
+            position: relative;
+
+            .product_cards_bg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #F8F8F8;
+                z-index: -1;
+            }
+
+            .card_img_container {
+                position: relative;
+
+                .card_img {
+                    max-height: 420px;
+                    max-width: 100%;
+                }
+
+                .card_hover {
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: #3A3838DB;
+                    align-items: center;
+                    justify-content: center;
+
+                    &_add_to_cart {
+                        cursor: pointer;
+                        display: flex;
+                        width: 139px;
+                        height: 44px;
+                        color: #fff;
+                        border: 1px solid #fff;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 11.04px;
+
+                        .card_add_ico {
+                            width: 26px;
+                            height: 24px;
+                        }
+
+                        .card_add_text {
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                        }
+                    }
+                }
+
+                &:hover .card_hover {
+                    display: flex;
+                }
+            }
+
+            .card_content {
+                padding-top: 24.35px;
+                padding-right: 28.8px;
+                padding-bottom: 20px;
+                padding-left: 16.46px;
+                /* тут правильней наверное margin но тогда проблемы с фоном который я так и не смог подложить под картинку */
+
+                /* background: #F8F8F8; */
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                .card_title {
+                    font-weight: 400;
+                    font-size: 13px;
+                    line-height: 16px;
+                    color: #000000;
+                }
+
+                .card_text {
+                    font-weight: 300;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #5D5D5D;
+                }
+
+                .card_price {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #F16D7F;
+                }
+            }
+        }
+    }
+
+    &_rectangle_button {
+        width: 212px;
+        height: 48px;
+        border: 1px solid #FF6A6A;
+
+        a {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: space-around;
+
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #F26376;
+
+        }
+
+        &:hover a {
+            background-color: #FF6A6A;
+            color: #FFF;
+            /* color: #FFF; */
+        }
+    }
+}
+
+@import "./styles/feature.scss";
+
+.cart-items {
+
+    text-align: center;
+
+    &__title {}
+
+    &__box {
+
+        .cart-card {
+            text-align: start;
+            height: 306px;
+            width: 652px;
+            display: flex;
+            box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+            position: relative;
+
+            .img-container {
+                width: 262px;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    height: 100%;
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+
+            .product_description {
+                width: 390px;
+                padding-top: 22px;
+                padding-left: 31px;
+                display: flex;
+                flex-direction: column;
+                gap: 42px;
+
+                .product_name {
+                    max-width: 262px;
+                    color: #222;
+                    font-size: 24px;
+                    font-weight: 400;
+                }
+
+                .product_specification {
+                    font-size: 22px;
+                    font-weight: 400;
+
+                    .parameter-name {
+                        color: #575757;
+                    }
+
+                    .price-assigned {
+                        color: #EF5B70;
+                    }
+
+                    .value {
+                        color: #6F6E6E;
+
+                    }
+
+                    .quantity-field {
+
+                        margin-left: 24px;
+                        width: 44px;
+                        height: 25px;
+                        text-align: center;
+                        color: #656565;
+                        font-size: 18px;
+                        font-weight: 400;
+
+                        border: 1px solid #EAEAEA;
+
+                        &::-webkit-inner-spin-button,
+                        &::-webkit-outer-spin-button {
+                            -webkit-appearance: none;
+                        }
+
+                        // не удалось изменить свойстви рамки. Да и в макете нет её параметров
+                    }
+                }
+            }
+
+            .close-cart {
+                position: absolute;
+                top: 28px;
+                right: 22px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@import "./styles/subscribe.scss";
+
+@import "./styles/footter.scss";
+
+@media (max-width: 1024px) {
+    .center {
+        padding-left: calc(50% - 376px);
+        padding-right: calc(50% - 376px);
+    }
+
+    .promo {
+        .promo_content {
+            .promo_info {
+                width: 311px;
+
+                .info_content {
+                    &__big {
+                        font-size: 44px;
+                        line-height: 53px;
+                    }
+
+                    &__small {
+                        font-size: 24px;
+                        line-height: 29px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .other {
+        margin-top: 64.95px;
+        margin-bottom: 109.92px;
+    }
+
+    .products {
+        margin-top: 109.92px;
+        margin-bottom: 70.52px;
+
+        &_title {
+            gap: 3.3px;
+        }
+
+        &_cards-grid {
+            margin-top: 72.74px;
+            margin-bottom: 32.48px;
+            gap: 15px;
+            /* на макете  отступ от 14 до 18. взял половину от десктопной версии*/
+
+            &_card {
+                position: relative;
+
+                .product_cards_bg {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: #F8F8F8;
+                    z-index: -1;
+                }
+
+                .card_content {
+                    gap: 0px;
+
+                    .card_title {
+                        margin-bottom: 12.65px;
+                    }
+
+                    .card_text {
+                        margin-bottom: 18px;
+                    }
+                }
+            }
+        }
+
+        &_rectangle_button {
+            width: 212px;
+            height: 48px;
+            border: 1px solid #FF6A6A;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .center {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .promo {
+        justify-content: center;
+
+        .promo_img {
+            display: none;
+        }
+
+        .promo_content {
+            padding: 148px 56px;
+
+            .promo_info {
+                width: auto;
+
+                .line_info {
+                    margin-right: 15px;
+                }
+
+                .info_content {
+                    width: 100%;
+                }
+
+                .info_content {
+                    &__big {
+                        font-size: 38px;
+                    }
+
+                    &__small {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .other {
+        margin-top: 64px;
+        margin-bottom: 64px;
+
+        padding: 0px 16px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 32px;
+
+        &_item {
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &_content {
+            position: absolute;
+            min-width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &_big_item {
+            display: flex;
+            justify-content: center;
+            max-height: 111px;
+            overflow: hidden;
+
+            .other_img {
+                object-fit: contain;
+                min-width: 768px;
+            }
+        }
+    }
+
+    .products {
+        margin: 64px 8px 85.5px 8px;
+
+        &_cards-grid {
+            margin-top: 64.7px;
+            margin-bottom: 41.1px;
+            grid-template-columns: repeat(auto-fit, 359px);
+
+            &_card {
+                position: relative;
+
+                .card_img_container {
+                    position: relative;
+
+                    .card_img {
+                        max-height: 419px;
+                    }
+                }
+
+                .card_content {
+                    padding-top: 23.28px;
+                    padding-right: 28.72px;
+                    padding-bottom: 20px;
+                    padding-left: 16.41px;
+                }
+            }
+        }
+
+        &_rectangle_button {
+            width: 211px;
+            height: 47px;
+        }
+    }
+}
+
+@media (max-width: 390px) {
+    .products {
+        &_cards-grid {
+            grid-template-columns: repeat(auto-fit, 100%);
+        }
+    }
+
+}
+}
