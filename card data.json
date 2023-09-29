@@ -1,0 +1,111 @@
+[
+
+    {
+
+        "IDproduct": "1",
+
+        "name": "ELLERY X M'O CAPSULE",
+
+        "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+
+        "price": "52.00",
+
+        "img": "./img/cards1.png",
+
+        "color": "Red",
+
+        "size": "XL"
+
+    },
+
+    {
+
+        "IDproduct": "2",
+
+        "name": "ELLERY X M'O CAPSULE",
+
+        "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+
+        "price": "52.00",
+
+        "img": "./img/cards2.png",
+
+        "color": "Blue",
+
+        "size": "L"
+
+    },
+
+    {
+
+        "IDproduct": "3",
+
+        "name": "ELLERY X M'O CAPSULE",
+
+        "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+
+        "price": "52.00",
+
+        "img": "./img/cards3.png",
+
+        "color": "Yelow",
+
+        "size": "M"
+
+    },
+
+    {
+
+        "IDproduct": "4",
+
+        "name": "ELLERY X M'O CAPSULE",
+
+        "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+
+        "price": "52.00",
+
+        "img": "./img/cards4.png",
+
+        "color": "Green",
+
+        "size": "XXL"
+
+    },
+
+    {
+
+        "IDproduct": "5",
+
+        "name": "ELLERY X M'O CAPSULE",
+
+        "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+
+        "price": "52.00",
+
+        "img": "./img/cards5.png",
+
+        "color": "Red",
+
+        "size": "XL"
+
+    },
+
+    {
+
+        "IDproduct": "6",
+
+        "name": "ELLERY X M'O CAPSULE",
+
+        "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+
+        "price": "52.00",
+
+        "img": "./img/cards6.png",
+
+        "color": "Red",
+
+        "size": "XL"
+
+    }
+
+]
